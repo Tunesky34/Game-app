@@ -1,0 +1,26 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "AmazonEKSLoadBalancerControllerRole",
+        "RoleId": "AROASUIE44UPCOMI6EBUT",
+        "Arn": "arn:aws:iam::180935779614:role/AmazonEKSLoadBalancerControllerRole",
+        "CreateDate": "2025-10-18T19:37:33+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Federated": "arn:aws:iam::180935779614:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/38326B79249BFF69DB7AA96B921F4EDD"
+                    },
+                    "Action": "sts:AssumeRoleWithWebIdentity",
+                    "Condition": {
+                        "StringEquals": {
+                            "oidc.eks.us-east-1.amazonaws.com/id/38326B79249BFF69DB7AA96B921F4EDD:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
